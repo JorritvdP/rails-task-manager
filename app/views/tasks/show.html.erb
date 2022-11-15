@@ -1,0 +1,8 @@
+<h1 class="text-center"><%= @task.title %></h1>
+<div class="d-flex p2 mt-2">
+  <div class="p-3"><%= @task.completed %></div>
+  <div class="p-3"><%= @task.details %></div>
+  <div><%= link_to "🗑", task_delete_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></div>
+</div>
+
+<%= link_to 'Go Back', tasks_path %>

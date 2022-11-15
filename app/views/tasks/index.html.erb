@@ -1,0 +1,19 @@
+<h1>Task Manager</h1>
+<div class="p-2 ms-2 link-dark link-unstyled"><%= link_to 'Çreate new Task', tasks_new_path %></div>
+
+<% @tasks.each do |task| %>
+  <div class="d-flex">
+    <% if task.completed %>
+      <div class="p-2 ms-2"><%= "✔" %></div>
+    <% else %>
+      <div class="p-2 ms-2"><%= "❌" %></div>
+    <% end %>
+
+    <div>
+      <div><%=link_to task.title, task_path(task) %></div>
+      <div><%= task.details %></div>
+    </div>
+
+    <div><%= link_to 'Edit', task_edit_path(task) %></div>
+  </div>
+<% end %>
